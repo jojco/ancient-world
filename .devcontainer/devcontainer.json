@@ -1,0 +1,145 @@
+{
+    "name": "Smart Striga",
+    "runArgs": [
+        "--name=smart-striga",
+        "--net=intranet"
+    ],
+    "workspaceMount": "source=${localWorkspaceFolder},target=/app,type=bind",
+    "workspaceFolder": "/app",
+    "build": {
+        "dockerfile": "../Dockerfile",
+        "context": "..",
+        "target": "development",
+        "args": {
+            "NODE_VERSION": "16-bullseye"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "Gruntfuggly.todo-tree",
+                "IronGeek.vscode-env",
+                "mongodb.mongodb-vscode",
+                "Lokalise.i18n-ally",
+                "MisterJ.vue-volar-extention-pack",
+                "Vue.volar",
+                "Wscats.vue",
+                "christian-kohler.path-intellisense",
+                "dbaeumer.vscode-eslint",
+                "formulahendry.auto-close-tag",
+                "formulahendry.auto-rename-tag",
+                "mhutchie.git-graph",
+                "mikestead.dotenv",
+                "naumovs.color-highlight",
+                "sdras.vue-vscode-snippets",
+                "steoates.autoimport",
+                "usernamehw.errorlens",
+                "xabikos.JavaScriptSnippets"
+            ],
+            // Set *default* container specific settings.json values on container create.
+            "settings": {
+                "window.title": "Smart Striga",
+                "workbench.editor.labelFormat": "short",
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "terminal.integrated.tabs.title": "${remoteName}${process}${cwd}",
+                "editor.codeActionsOnSave": {
+                    "source.fixAll.eslint": true
+                },
+                "editor.formatOnPaste": true,
+                "editor.formatOnSave": true,
+                // INFO: Brackets fix
+                "editor.language.colorizedBracketPairs": [
+                    [
+                        "{",
+                        "}"
+                    ],
+                    [
+                        "[",
+                        "]"
+                    ],
+                    [
+                        "(",
+                        ")"
+                    ]
+                ],
+                // TODO Tree extension settings
+                "todo-tree.general.tags": [
+                    "TODO",
+                    "FIXME",
+                    "WARN",
+                    "INFO",
+                    "BUG"
+                ],
+                "todo-tree.highlights.defaultHighlight": {
+                    "icon": "alert",
+                    "type": "text",
+                    "opacity": 50,
+                    "rulerLane": "full"
+                },
+                // TODO: Setting.
+                "todo-tree.highlights.customHighlight": {
+                    "TODO": {
+                        "icon": "bookmark",
+                        "background": "#0061355b",
+                        "foreground": "#61c747",
+                        "iconColour": "#61c747",
+                        "rulerColour": "#61c747",
+                        "gutterIcon": true,
+                        "type": "whole-line",
+                        "rulerLane": "full"
+                    },
+                    // FIXME: Setting.
+                    "FIXME": {
+                        "icon": "flame",
+                        "background": "#82192559",
+                        "foreground": "#da713c",
+                        "iconColour": "#da713c",
+                        "rulerColour": "#da713c",
+                        "gutterIcon": true,
+                        "rulerLane": "full",
+                        "type": "whole-line"
+                    },
+                    // INFO: Setting
+                    "INFO": {
+                        "icon": "book",
+                        "background": "#196f8259",
+                        "foreground": "#3ccfda",
+                        "iconColour": "#3ccfda",
+                        "rulerColour": "#3ccfda",
+                        "gutterIcon": true,
+                        "rulerLane": "full",
+                        "type": "whole-line"
+                    },
+                    // WARN: Setting
+                    "WARN": {
+                        "icon": "alert",
+                        "background": "#825f1959",
+                        "foreground": "#dac23c",
+                        "iconColour": "#dac23c",
+                        "rulerColour": "#dac23c",
+                        "gutterIcon": true,
+                        "rulerLane": "full",
+                        "type": "whole-line"
+                    },
+                    // BUG: Setting
+                    "BUG": {
+                        "icon": "bug",
+                        "background": "#82192571",
+                        "foreground": "#da3c51",
+                        "iconColour": "#da3c51",
+                        "rulerColour": "#da3c51",
+                        "gutterIcon": true,
+                        "rulerLane": "full",
+                        "type": "whole-line"
+                    }
+                }
+            }
+        }
+    },
+    // "forwardPorts": [],
+    "initializeCommand": "/bin/bash .devcontainer/initialization.sh",
+    "postCreateCommand": "/bin/bash .devcontainer/post-create.sh",
+    "postAttachCommand": "/bin/bash .devcontainer/post-attach.sh",
+    "remoteUser": "node"
+}
