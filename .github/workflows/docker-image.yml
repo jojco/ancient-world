@@ -22,6 +22,8 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: "Say Hello From Github"
+        run: echo "Greetings $GITHUB_NAME. Job name - $GITHUB_JOB"
     -
       name: Build and push
       uses: docker/build-push-action@v4
