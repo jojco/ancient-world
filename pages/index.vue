@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-const { data: scd30 } = await useFetch('/scd30');
+const { data: scd30 } = await useAsyncData('scd30', () => $fetch('/api/scd30'));
 const { data: hello } = await useFetch('/api/hello');
 
 console.log('scd30', scd30);

@@ -1,5 +1,5 @@
-export default defineEventHandler((event) => {
-  console.log(event);
+export default defineEventHandler(() => {
+  //   console.log(event);
   return {
     api: 'works'
   };
