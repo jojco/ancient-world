@@ -17,4 +17,7 @@ RUN pnpm build
 #** Production **
 FROM node:${NODE_VERSION} AS production
 WORKDIR /app
+
+COPY --from=builder /app/.output /app/.app
+
 CMD "node" ".output/server/index.mjs"

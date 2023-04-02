@@ -1,7 +1,7 @@
 {
     "name": "Smart Striga",
     "runArgs": [
-        "--name=smart-striga",
+        "--name=smart-striga-dev",
         "--net=intranet"
     ],
     "workspaceMount": "source=${localWorkspaceFolder},target=/app,type=bind",
