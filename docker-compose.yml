@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+  # ------- Herakles UI -----------------------------------------------------------------------------
+  smart-striga:
+    image: jojco/smart-striga
+    hostname: smart-striga
+    container_name: smart-striga
+    ports:
+      - '3000:3000'
+    environment:
+      - NITRO_PORT=3000
+      - NITRO_HOST=0.0.0.0
+    networks:
+      - intranet
+      - ext-network
+  # ------- Jaeger ----------------------------------------------------------------------------------
+  tool-jaeger:
+    image: jaegertracing/all-in-one:1.19.2
+    hostname: jaeger
+    container_name: jaeger
+    ports:
+      - '${LOCAL_IP:-127.0.0.1}:16686:16686' # The UI port
+    networks:
+      - intranet
+      - ext-network
+
+# ------- Networks --------------------------------------------------------------------------------
+networks:
+  intranet:
+    name: intranet
+  ext-network:
+    name: ext-network
+    external: true
