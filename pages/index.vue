@@ -7,6 +7,7 @@
 
 <script setup>
 const { data: scd30 } = await useFetch('/scd30');
+console.log(scd30);
 </script>
 
 <style lang="scss" scoped></style>

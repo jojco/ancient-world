@@ -1,6 +1,7 @@
 import { SCD30 } from 'scd30-node';
 
 export default defineEventHandler((event) => {
+  console.log('New request: ' + event.node.req.url);
   (async () => {
     const scd30 = await SCD30.connect();
     await scd30.startContinuousMeasurement();
@@ -11,7 +12,6 @@ export default defineEventHandler((event) => {
     console.log(`Humidity: ${measurement.relativeHumidity} %`);
 
     await scd30.disconnect();
+    return measurement;
   })();
-
-  console.log('New request: ' + event.node.req.url);
 });
