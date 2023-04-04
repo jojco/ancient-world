@@ -11,8 +11,7 @@
         "context": "..",
         "target": "development",
         "args": {
-            "NODE_VERSION": "16-bullseye",
-            "BUILDKIT_INLINE_CACHE": "0"
+            "NODE_VERSION": "16-bullseye"
         }
     },
     "customizations": {
