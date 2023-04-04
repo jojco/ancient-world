@@ -10,7 +10,8 @@
 
       <h2>relativeHumidity: {{ scd30?.relativeHumidity }}</h2>
       <Knob :model="scd30?.relativeHumidity" :min="0" :max="100" />
-
+      <InputSwitch />
+      <InputSwitch />
       <Toast />
 
       <div class="mt-4">

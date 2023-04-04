@@ -44,6 +44,7 @@ import ProgressSpinner from 'primevue/progressspinner';
 import Image from 'primevue/image';
 import Calendar from 'primevue/calendar';
 import FileUpload from 'primevue/fileupload';
+import InputSwitch from 'primevue/inputswitch';
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(PrimeVue, { ripple: true });
@@ -92,4 +93,5 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component('TabMenu', TabMenu);
   nuxtApp.vueApp.component('Image', Image);
   nuxtApp.vueApp.component('Calendar', Calendar);
+  nuxtApp.vueApp.component('InputSwitch', InputSwitch);
 });
